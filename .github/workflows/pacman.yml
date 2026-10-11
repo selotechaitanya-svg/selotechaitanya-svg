@@ -33,6 +33,33 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
 
+      - name: Enhance Pacman Dot Visibility for Low Contributions
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const darkPath = path.join('dist', 'pacman-contribution-graph-dark.svg');
+            if (fs.existsSync(darkPath)) {
+              let svg = fs.readFileSync(darkPath, 'utf8');
+              const tokens = { '#39d353': '__LVL4__', '#26a641': '__LVL3__', '#006d32': '__LVL2__', '#0e4429': '__LVL1__' };
+              for (const [k, v] of Object.entries(tokens)) svg = svg.replaceAll(k, v);
+              const newColors = { '__LVL4__': '#7ee787', '__LVL3__': '#56d364', '__LVL2__': '#39d353', '__LVL1__': '#2ea043' };
+              for (const [k, v] of Object.entries(newColors)) svg = svg.replaceAll(k, v);
+              fs.writeFileSync(darkPath, svg, 'utf8');
+              console.log('Enhanced dark pacman graph visibility');
+            }
+            const lightPath = path.join('dist', 'pacman-contribution-graph.svg');
+            if (fs.existsSync(lightPath)) {
+              let svg = fs.readFileSync(lightPath, 'utf8');
+              const tokens = { '#216e39': '__LVL4__', '#30a14e': '__LVL3__', '#40c463': '__LVL2__', '#9be9a8': '__LVL1__' };
+              for (const [k, v] of Object.entries(tokens)) svg = svg.replaceAll(k, v);
+              const newColors = { '__LVL4__': '#116329', '__LVL3__': '#216e39', '__LVL2__': '#30a14e', '__LVL1__': '#40c463' };
+              for (const [k, v] of Object.entries(newColors)) svg = svg.replaceAll(k, v);
+              fs.writeFileSync(lightPath, svg, 'utf8');
+              console.log('Enhanced light pacman graph visibility');
+            }
+          "
+
       - name: Generate Snake Contribution Graph (Alternative)
         uses: Platane/snk/svg-only@v3
         with:
