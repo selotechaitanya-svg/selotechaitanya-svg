@@ -105,9 +105,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=selotechaitanya-svg&bg_color=0d1117&color=8b949e&line=58a6ff&point=e6edf3&area=true&area_color=58a6ff&hide_border=false&border_color=30363d">
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=selotechaitanya-svg&bg_color=ffffff&color=656d76&line=0969da&point=1f2328&area=true&area_color=0969da&hide_border=false&border_color=d0d7de">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=selotechaitanya-svg&hide_border=false" width="95%" alt="Activity Graph" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=selotechaitanya-svg&layout=compact&hide_border=false&border_color=30363d&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9">
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=selotechaitanya-svg&layout=compact&hide_border=false&border_color=d0d7de&bg_color=ffffff&title_color=0969da&text_color=24292f">
+    <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=selotechaitanya-svg&layout=compact&hide_border=false" alt="Top Languages" />
   </picture>
 </div>
 
