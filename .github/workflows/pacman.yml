@@ -32,6 +32,7 @@ jobs:
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.PACMAN_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Enhance Pacman Dot Visibility for Low Contributions
         run: |
@@ -68,7 +69,7 @@ jobs:
             dist/github-snake.svg?color_snake=#FF69B4&color_dots=#ebedf0,#F8BBD0,#EF93C4,#FF69B4,#9C27B0
             dist/github-snake-dark.svg?palette=github-dark&color_snake=#FF69B4&color_dots=#161b22,#591942,#8E2A5F,#EF93C4,#FF69B4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PACMAN_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Push SVGs to the output branch
         uses: crazy-max/ghaction-github-pages@v4
